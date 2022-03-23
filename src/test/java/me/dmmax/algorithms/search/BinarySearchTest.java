@@ -15,7 +15,7 @@ class BinarySearchTest {
 
     @ParameterizedTest
     @MethodSource("testCases")
-    void testInFirstHalfOfList(List<Integer> sortedList, int valueToFind, int expectedValue) {
+    void testMultipleOptions(List<Integer> sortedList, int valueToFind, int expectedValue) {
         assertThat(BinarySearch.search(sortedList, valueToFind)).isEqualTo(expectedValue);
     }
 
@@ -26,6 +26,7 @@ class BinarySearchTest {
                 Arguments.of(TEST_LIST, 3, 2),
                 Arguments.of(TEST_LIST, 4, 3),
                 Arguments.of(TEST_LIST, 5, 4),
-                Arguments.of(TEST_LIST, 6, -1));
+                Arguments.of(TEST_LIST, 6, -1),
+                Arguments.of(List.of(), 7, -1));
     }
 }
