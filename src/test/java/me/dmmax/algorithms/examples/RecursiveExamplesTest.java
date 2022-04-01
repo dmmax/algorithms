@@ -1,7 +1,6 @@
 package me.dmmax.algorithms.examples;
 
 import me.dmmax.algorithms.util.Collections;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -11,7 +10,7 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class RecursiveFastSearchTest {
+class RecursiveExamplesTest {
 
     private static final List<Integer> TEST_LIST = List.of(1, 2, 3, 4, 5);
 
@@ -19,8 +18,8 @@ class RecursiveFastSearchTest {
     @MethodSource("testCases")
     void testSum(int sizeOfList) {
         var generatedList = Collections.generateRandomList(sizeOfList, 10, 30);
-        var sumLoop = RecursiveFastSearch.sumLoop(generatedList);
-        var sumRecursive = RecursiveFastSearch.sumRecursive(generatedList);
+        var sumLoop = RecursiveExamples.sumLoop(generatedList);
+        var sumRecursive = RecursiveExamples.sumRecursive(generatedList);
         assertThat(sumLoop).isEqualTo(sumRecursive);
     }
 
@@ -28,7 +27,7 @@ class RecursiveFastSearchTest {
     @MethodSource("testCases")
     void testSizeOfListRecursive(int sizeOfList) {
         var generatedList = Collections.generateRandomList(sizeOfList, 10, 30);
-        assertThat(RecursiveFastSearch.sizeOfListRecursive(generatedList)).isEqualTo(sizeOfList);
+        assertThat(RecursiveExamples.sizeOfListRecursive(generatedList)).isEqualTo(sizeOfList);
     }
 
     @ParameterizedTest
@@ -36,13 +35,13 @@ class RecursiveFastSearchTest {
     void testFindMaxNumberRecursive(int sizeOfList) {
         var generatedList = Collections.generateRandomList(sizeOfList, 10, 30);
         var maxValue = generatedList.stream().max(Integer::compare).orElse(Integer.MIN_VALUE);
-        assertThat(RecursiveFastSearch.findMaxNumberRecursive(generatedList)).isEqualTo(maxValue);
+        assertThat(RecursiveExamples.findMaxNumberRecursive(generatedList)).isEqualTo(maxValue);
     }
 
     @ParameterizedTest
     @MethodSource("binarySearchTestCases")
     void testBinarySearchRecursive(List<Integer> sortedIntegers, int valueToFind, int expectedValue) {
-        assertThat(RecursiveFastSearch.binarySearchRecursive(sortedIntegers, valueToFind)).isEqualTo(expectedValue);
+        assertThat(RecursiveExamples.binarySearchRecursive(sortedIntegers, valueToFind)).isEqualTo(expectedValue);
     }
 
     private static Stream<Arguments> testCases() {

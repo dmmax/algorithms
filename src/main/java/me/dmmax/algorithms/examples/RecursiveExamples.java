@@ -2,9 +2,9 @@ package me.dmmax.algorithms.examples;
 
 import java.util.List;
 
-public class RecursiveFastSearch {
+public class RecursiveExamples {
 
-    private RecursiveFastSearch() {
+    private RecursiveExamples() {
         // Utility class
     }
 
